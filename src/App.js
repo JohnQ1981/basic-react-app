@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import JQ ,{ dt } from './JQ';
+ 
 
 function App() {
+  let message ='Hello there!';
+  var mt= Math.random();
+  if(mt>0.5){
+    message = 'Bye There';
+  }
+  console.log(mt);
+  const date = new Date();
+  const time = date.toLocaleTimeString();
+  const inputType ='number';
+  const minValue= 5
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {message}
+      <hr/>
+      it is {time}
+      <hr/>
+      we can also {new Date().toLocaleTimeString()}
+      <div> <input type="number"></input></div>
+      <div> <input style={{boder: '3px solid' ,color:'blue'}} type={inputType} min={minValue} max={12}></input></div>
+      <div><textarea autoFocus={true}></textarea></div>
+      <div><hr/><JQ/></div>
+      <div>{dt}</div>
     </div>
   );
 }
